@@ -10,9 +10,17 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 /**
- *
- * @author mohamadsofiyani
- */
+* UDP Implementation - socket-udp-java-client
+*
+* give param in contructor to parse message from server
+* initializing to filter params that is only string or json type
+*
+* @author M Sofiyan
+* @email msofyancs@gmail.com
+* @skypeid viyancs
+* if you want to using part of full this code, please don't remove this comment
+*
+**/
 public class UDPMessage {
 
     private JSONObject jsonData;
@@ -20,18 +28,29 @@ public class UDPMessage {
     private String type;
     private UDPCallback callback;
 
+    /**
+     * contructor 
+     * @param json is data from server
+     * @param callback is callback 
+     */
     public UDPMessage(JSONObject json, UDPCallback callback) {
         this.jsonData = json;
         this.type = "json";
         this.callback = callback;
     }
-
+    /**
+     * contructor
+     * @param msg is data from server with String type
+     * @param callback  is callback
+     */
     public UDPMessage(String msg, UDPCallback callback) {
         this.message = msg;
         this.type = "string";
         this.callback = callback;
     }
-
+    /**
+     * initializing for filter data from server
+     */
     public void init() {
         if (this.type.equals("json")) {
             if (this.jsonData.get("name") == null || this.jsonData.get("args") == null) {
