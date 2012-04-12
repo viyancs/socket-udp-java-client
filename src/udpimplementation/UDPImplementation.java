@@ -15,9 +15,17 @@ import vyn.udp.SocketUDP;
 import vyn.udp.UDPCallback;
 
 /**
- *
- * @author mohamadsofiyani
- */
+* UDP Implementation - socket-udp-java-client
+*
+* process send data to server
+* parsing data from server using callback
+*
+* @author M Sofiyan
+* @email msofyancs@gmail.com
+* @skypeid viyancs
+* if you want to using part of full this code, please don't remove this comment
+*
+**/
 public class UDPImplementation {
 
     /**
@@ -42,45 +50,48 @@ public class UDPImplementation {
         client.close();
         client.disconnect();
     }
-    
+    /**
+     * callback for request and response 
+     */
     final static public UDPCallback callback = new UDPCallback() {
-
+        
+        // when server is connected
         @Override
         public void onConnect() {
             System.out.println("server is connected");
         }
-        
+        //when onmessage with string and jsonArray data
         @Override
         public void onMessage(String event, JSONArray json) {
             System.out.println("the event is " + event + "\n");
             System.out.println("the data is " + json.toJSONString() + "\n");
         }
-
+        //when onmessage with string data
         @Override
         public void onMessage(String data) {
             System.out.println("data from server : " + data);
         }
-        
+        //when onmessage with jsonObject data
         @Override
         public void onMessage(JSONObject msg) {
             System.out.println("data from server = " + msg.toJSONString());           
         }
+        //when onmessage with string and jsonObject
         @Override
         public void onMessage(String event, JSONObject json) {
             System.out.println("data from server = " + json.toJSONString());  
-        }
-    
-
+        }   
+        //when client is close request
         @Override
         public void onClose() {
             System.out.println("client is close the request");
         }
-
+        //when error 
         @Override
         public void onError(ParseException ex) {
             System.out.println("something wrong : " + ex.getMessage());
         }
-
+        //when client is disconnect
         @Override
         public void onDisconnect() {
             System.out.println("client is disconnect");
