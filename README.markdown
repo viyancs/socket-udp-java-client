@@ -21,8 +21,7 @@ Running The Application
 * run the server that been use nodejs<br>
 
 * for the server code 
-	```java
-    var dgram = require("dgram");
+*  `var dgram = require("dgram");
     var server = dgram.createSocket("udp4");
     server.on("message", function (msg, rinfo) {
         var data = JSON.parse(msg);
@@ -41,7 +40,7 @@ Running The Application
     console.log("server listening " +
         address.address + ":" + address.port);
     });
-    server.bind(41234);
+    server.bind(41234);`
 
 save to app.js run with `sudo node app.js`
 * run the UDPImplementation.java to test application<br>
