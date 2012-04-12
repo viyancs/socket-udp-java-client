@@ -9,28 +9,31 @@ import org.json.simple.parser.ParseException;
 
 
 /**
- *
- * @author mohamadsofiyani
- */
+* UDP Callback - socket-udp-java-client
+*
+* creating interface for callback
+*
+* @author M Sofiyan
+* @email msofyancs@gmail.com
+* @skypeid viyancs
+* if you want to using part of full this code, please don't remove this comment
+*
+**/
 public interface UDPCallback {
     /*
      * on Message called when the client send message to server
+     * on Connect called when client connect to server
+     * on disconnect called when client is disconnect from server
+     * on close when client close the request to server
+     * on error when any error request and response
      */
     void onMessage(String event, JSONArray json);
-    void onMessage(String event, JSONObject json);
-    
-    void onMessage(JSONObject json);
-    
+    void onMessage(String event, JSONObject json);   
+    void onMessage(JSONObject json);   
     void onMessage(String data);
     void onConnect();
     void onDisconnect();
-    /*
-     * on Close called when server is closed
-     */
     void onClose();
-    /*
-     * on error called when any error in transmit data or receive data
-     */
     void onError(ParseException ex);
    
 }
