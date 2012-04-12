@@ -5,8 +5,8 @@ this repository is communication using protocol udp with the server using nodejs
 <br>
 requiretment : 
 <br>
-1) node.js 
-2) java socket UDP using DatagramPacket and DatagramSocket
+1) node.js <br>
+2) java socket UDP using DatagramPacket and DatagramSocket<br>
 3) json 
 
 
@@ -90,6 +90,8 @@ Features
 
 * send data using string format 
 * send data using JSONFormat (JSONObject,JSONArray) and dynamical JSON.
+* receive data using string format
+* receive data using json format
 
 Bugging 
 -----------------------
