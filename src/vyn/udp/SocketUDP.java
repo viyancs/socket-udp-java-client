@@ -13,9 +13,18 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 /**
- *
- * @author mohamadsofiyani
- */
+* UDP Implementation - socket-udp-java-client
+*
+* connect to server
+* initializing receive data
+* 
+*
+* @author M Sofiyan
+* @email msofyancs@gmail.com
+* @skypeid viyancs
+* if you want to using part of full this code, please don't remove this comment
+*
+**/
 public class SocketUDP implements DgramTransport{
     
     private InetAddress ip;
