@@ -21,8 +21,7 @@ Running The Application
 * run the server that been use nodejs<br>
 
 * for the server code  <br>
-`
-    var dgram = require("dgram");
+   `var dgram = require("dgram");
     var server = dgram.createSocket("udp4");
     server.on("message", function (msg, rinfo) {
     var data = JSON.parse(msg);
