@@ -84,6 +84,35 @@ public static void main(String[] args) throws UnknownHostException, SocketExcept
             System.out.println("client is disconnect");
         }
     };
+* for the server code 
+```java 
+    var dgram = require("dgram");
+    var server = dgram.createSocket("udp4");
+
+    server.on("message", function (msg, rinfo) {
+        var data = JSON.parse(msg);
+        console.log("server got: " + data.balance + " from " + rinfo.address + ":" + rinfo.port);
+
+        var data = {"name" : "test","args" : {"data":[{"a":1}]}};
+        //send data to client
+        var message = new Buffer(JSON.stringify(data));//JSON.stringify(data)
+        server.send(message, 0, message.length, rinfo.port, rinfo.address, function(err, bytes) {
+            console.log("error mamen = " + err );
+            console.log("data bytes = " + bytes);
+            //server.close();
+        });
+    });
+
+    server.on("listening", function () {
+    var address = server.address();
+    console.log("server listening " +
+        address.address + ":" + address.port);
+    });
+
+    server.bind(41234);
+
+save to app.js run with `sudo node app.js`
+
 
 Features
 -----------------------
