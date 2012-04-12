@@ -21,8 +21,7 @@ Running The Application
 * run the server that been use nodejs<br>
 
 * for the server code  <br>
-   ```python
-
+<pre>
     var dgram = require("dgram");
     var server = dgram.createSocket("udp4");
     server.on("message", function (msg, rinfo) {
@@ -52,7 +51,8 @@ Running The Application
         address.address + ":" + address.port);
     });
 
-    server.bind(41234);```
+    server.bind(41234);
+</pre>
 
 
 save to app.js run with `sudo node app.js` <br>
