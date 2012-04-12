@@ -90,6 +90,8 @@ Features
 
 * send data using string format 
 * send data using JSONFormat (JSONObject,JSONArray) and dynamical JSON.
+* receive data using string format
+* receive data using json format
 
 Bugging 
 -----------------------
