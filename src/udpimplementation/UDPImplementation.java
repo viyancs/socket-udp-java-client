@@ -41,14 +41,15 @@ public class UDPImplementation {
         obj.put("balance", new Double(1000.21));
         obj.put("is_vip", new Boolean(true));
         obj.put("nickname",null);
+        String data = "testing send data";
+        sendData = data.getBytes();
 
-        sendData = obj.toJSONString().getBytes();
+        //sendData = obj.toJSONString().getBytes();
         SocketUDP client = new SocketUDP(IPAddress,41234,callback);
         client.connect();
         client.send(sendData);
         client.initReceive();
         client.close();
-        client.disconnect();
     }
     /**
      * callback for request and response 
