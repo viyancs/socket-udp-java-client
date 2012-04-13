@@ -1,7 +1,8 @@
 socket-udp-java-client
 ============
 
-this repository is communication using protocol udp with the server using nodejs and the client using java
+this repository is communication using protocol udp with the server using nodejs and the client using java, before you use this repository i'm reommended to read
+this article before [UDP introduction](https://github.com/viyancs/socket-udp-java-client/wiki), because any some different in TCP and UDP.
 <br>
 requiretment : 
 <br>
