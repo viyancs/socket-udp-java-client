@@ -125,7 +125,7 @@ Features
 Bugging 
 -----------------------
 
-* for now i don't detected bug but i can help a lot if someone can found the bug.
+* missing detected server is active or not
 
 Licence 
 ----------------------

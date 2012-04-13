@@ -104,8 +104,8 @@ public class SocketUDP implements DgramTransport{
             if(clientSide == null){
                 System.out.print("could't to connect to server \n");
             }else{
-                getCallback().onConnect();
                 clientSide.send(packet);
+                getCallback().onConnect();
                 System.out.print("client with ip " + this.ip + " sending packet..." + packet.toString() + '\n');
             }
             
